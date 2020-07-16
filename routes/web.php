@@ -23,6 +23,7 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'auth'],function(){
     Route::get('profile/edit', 'Admin\ProfileController@edit');
     Route::post('profile/edit', 'Admin\PrifileController@update');
 });
+Route::get('admin/news' , 'Admin\NewsController@index')->middleware('auth');
 
 /*Route::get('test', function(){
 return redirect() -> route('posttest'); //redirect를 이용해서 다른 라우터로 이동시킬수도 있다
